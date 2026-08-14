@@ -1,0 +1,3362 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+
+/* ------------------------------
+   BASIC RESET
+------------------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: #f3f1ea;
+    color: #171717;
+
+    font-family: "Manrope", sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* ------------------------------
+   NAVIGATION
+------------------------------ */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 24px 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 100;
+}
+
+
+.logo {
+    color: #171717;
+
+    text-decoration: none;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 14px;
+
+    letter-spacing: 0.08em;
+}
+
+
+.nav-status {
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    background: #536B8E;
+
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+
+.menu-button {
+    background: none;
+
+    border: none;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* ------------------------------
+   HERO
+------------------------------ */
+
+.hero {
+
+    min-height: 100vh;
+
+    padding: 120px 32px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+
+.hero-top,
+.hero-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+.hero-content {
+
+    max-width: 1100px;
+}
+
+
+.eyebrow {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 0.12em;
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 {
+
+    font-size: clamp(4rem, 11vw, 10rem);
+
+    line-height: 0.82;
+
+    font-weight: 500;
+
+    letter-spacing: -0.07em;
+}
+
+
+.hero h1 span {
+
+    color: #536B8E;
+}
+
+
+.hero-description {
+
+    max-width: 380px;
+
+    margin-top: 40px;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    font-weight: 400;
+}
+
+
+/* ------------------------------
+   CURRENTLY
+------------------------------ */
+
+.currently {
+
+    min-height: 100vh;
+
+    padding: 140px 32px;
+
+    border-top: 1px solid rgba(23, 23, 23, 0.15);
+}
+
+
+.section-label {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.1em;
+
+    margin-bottom: 100px;
+}
+
+
+.currently-content {
+
+    display: grid;
+
+    grid-template-columns: 1.3fr 1fr;
+
+    gap: 80px;
+
+    align-items: end;
+}
+
+
+.currently h2 {
+
+    font-size: clamp(3.5rem, 8vw, 8rem);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.06em;
+
+    font-weight: 500;
+}
+
+
+.currently h2 em {
+
+    color: #536B8E;
+
+    font-style: normal;
+}
+
+
+.currently-text {
+
+    max-width: 400px;
+}
+
+
+.currently-text p {
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* ------------------------------
+   MOBILE
+------------------------------ */
+
+@media (max-width: 700px) {
+
+    .navbar {
+
+        padding: 20px;
+    }
+
+
+    .nav-status {
+
+        display: none;
+    }
+
+
+    .hero {
+
+        padding: 110px 20px 25px;
+    }
+
+
+    .hero-top,
+    .hero-bottom {
+
+        font-size: 8px;
+    }
+
+
+    .hero-bottom span:first-child {
+
+        display: none;
+    }
+
+
+    .hero h1 {
+
+        font-size: clamp(3.8rem, 18vw, 7rem);
+    }
+
+
+    .hero-description {
+
+        font-size: 14px;
+
+        margin-top: 30px;
+    }
+
+
+    .currently {
+
+        padding: 100px 20px;
+    }
+
+
+    .section-label {
+
+        margin-bottom: 70px;
+    }
+
+
+    .currently-content {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+}
+/* ------------------------------
+   MY WORLD / LAB
+------------------------------ */
+
+.world {
+
+    min-height: 120vh;
+
+    padding: 140px 32px;
+
+    border-top: 1px solid rgba(23, 23, 23, 0.15);
+
+    position: relative;
+}
+
+
+.world-intro {
+
+    margin-bottom: 80px;
+
+}
+
+
+.world-kicker {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.1em;
+
+    margin-bottom: 25px;
+}
+
+
+.world-intro h2 {
+
+    font-size: clamp(3.5rem, 8vw, 8rem);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.06em;
+
+    font-weight: 500;
+
+}
+
+
+.world-intro h2 em {
+
+    color: #536B8E;
+
+    font-style: normal;
+}
+
+
+/* ------------------------------
+   LAB SPACE
+------------------------------ */
+
+.lab {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    height: 650px;
+
+    margin: 0 auto;
+
+    border: 1px solid rgba(23, 23, 23, 0.18);
+
+    background:
+
+        linear-gradient(
+            rgba(23, 23, 23, 0.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(23, 23, 23, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 50px 50px;
+
+    box-shadow:
+    inset 0 0 80px rgba(83, 107, 142, 0.08);
+
+    overflow: hidden;
+}
+
+
+/* ------------------------------
+   LAB OBJECTS
+------------------------------ */
+
+.lab-object {
+
+    position: absolute;
+
+    width: 150px;
+
+    padding: 20px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease,
+        background 0.4s ease;
+}
+
+
+.lab-object:hover {
+
+    transform: translateY(-8px);
+
+    background: rgba(109, 128, 91, 0.08);
+}
+
+
+.object-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    border: 1px solid rgba(23, 23, 23, 0.25);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+
+.object-label {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.08em;
+
+    margin-bottom: 8px;
+}
+
+
+.object-info {
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    opacity: 0.55;
+
+    max-width: 150px;
+}
+
+
+/* ------------------------------
+   OBJECT POSITIONS
+------------------------------ */
+
+.dna-object {
+
+    top: 60px;
+
+    left: 80px;
+}
+
+
+.research-object {
+
+    top: 70px;
+
+    right: 100px;
+}
+
+
+.tech-object {
+
+    top: 260px;
+
+    left: 40px;
+}
+
+
+.music-object {
+
+    top: 280px;
+
+    right: 50px;
+}
+
+
+.books-object {
+
+    bottom: 60px;
+
+    left: 180px;
+}
+
+
+.coffee-object {
+
+    bottom: 50px;
+
+    right: 190px;
+}
+
+
+/* ------------------------------
+   CENTER
+------------------------------ */
+
+.lab-core {
+
+    background: rgba(83, 107, 142, 0.04);
+
+box-shadow:
+    0 0 60px rgba(83, 107, 142, 0.08);
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 170px;
+
+    height: 170px;
+
+    border: 1px solid rgba(23, 23, 23, 0.3);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 0.15em;
+}
+
+
+.core-ring {
+
+    position: absolute;
+
+    width: 125px;
+
+    height: 125px;
+
+    border: 1px dashed rgba(109, 128, 91, 0.7);
+
+    border-radius: 50%;
+
+    animation: rotateCore 18s linear infinite;
+}
+
+
+@keyframes rotateCore {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ------------------------------
+   MOBILE LAB
+------------------------------ */
+
+@media (max-width: 700px) {
+
+    .world {
+
+        padding: 100px 20px;
+    }
+
+
+    .lab {
+
+        height: 700px;
+    }
+
+
+    .lab-object {
+
+        width: 120px;
+
+        padding: 12px;
+    }
+
+
+    .object-info {
+
+        font-size: 10px;
+    }
+
+
+    .dna-object {
+
+        top: 40px;
+
+        left: 20px;
+    }
+
+
+    .research-object {
+
+        top: 40px;
+
+        right: 20px;
+    }
+
+
+    .tech-object {
+
+        top: 230px;
+
+        left: 15px;
+    }
+
+
+    .music-object {
+
+        top: 230px;
+
+        right: 15px;
+    }
+
+
+    .books-object {
+
+        bottom: 40px;
+
+        left: 20px;
+    }
+
+
+    .coffee-object {
+
+        bottom: 40px;
+
+        right: 20px;
+    }
+
+
+    .lab-core {
+
+        width: 140px;
+
+        height: 140px;
+    }
+
+}
+
+
+
+
+/* ------------------------------
+   EXPERIENCE PANEL
+------------------------------ */
+
+.experience-panel {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: #171717;
+
+    color: #f3f1ea;
+
+    z-index: 999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: scale(0.96);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        visibility 0.5s ease;
+}
+
+
+.experience-panel.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: scale(1);
+}
+
+
+.close-panel {
+
+    position: absolute;
+
+    top: 30px;
+
+    left: 30px;
+
+    background: none;
+
+    border: none;
+
+    color: #f3f1ea;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.08em;
+
+    cursor: pointer;
+}
+
+
+.close-panel:hover {
+
+    color: #a4b394;
+}
+
+
+.panel-content {
+
+    max-width: 750px;
+
+    width: 100%;
+}
+
+
+.panel-number {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 12px;
+
+    color: #a4b394;
+
+    margin-bottom: 30px;
+}
+
+
+.panel-category {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 0.12em;
+
+    margin-bottom: 25px;
+}
+
+
+.panel-content h3 {
+
+    font-size: clamp(3rem, 7vw, 7rem);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.06em;
+
+    font-weight: 500;
+
+    margin-bottom: 40px;
+}
+
+
+.panel-description {
+
+    max-width: 550px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: rgba(243, 241, 234, 0.7);
+
+    margin-bottom: 35px;
+}
+
+
+.panel-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.panel-tags span {
+
+    border: 1px solid rgba(243, 241, 234, 0.3);
+
+    padding: 9px 12px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* ------------------------------
+   EXPERIENCE PANEL — MOBILE
+------------------------------ */
+
+@media (max-width: 700px) {
+
+    .experience-panel {
+
+        padding: 30px 20px;
+    }
+
+
+    .close-panel {
+
+        top: 20px;
+
+        left: 20px;
+    }
+
+
+    .panel-content h3 {
+
+        font-size: 3.5rem;
+    }
+
+
+    .panel-description {
+
+        font-size: 14px;
+    }
+
+}
+/* =================================
+   BIOLOGY HYBRID EXPERIENCE
+================================= */
+
+.biology-grid {
+
+    width: min(1200px, 90vw);
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+/* LEFT */
+
+.biology-copy {
+
+    max-width: 620px;
+}
+
+
+.biology-copy .panel-number {
+
+    color: #536B8E;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 12px;
+
+    margin-bottom: 28px;
+}
+
+
+.biology-copy .panel-category {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 0.15em;
+
+    margin-bottom: 24px;
+
+    color: #536B8E;
+}
+
+
+.biology-copy h3 {
+
+    font-size: clamp(3rem, 6vw, 6.5rem);
+
+    line-height: 0.9;
+
+    letter-spacing: -0.06em;
+
+    font-weight: 500;
+
+    margin: 0 0 35px;
+}
+
+
+.biology-copy .panel-description {
+
+    max-width: 500px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: rgba(243, 241, 234, 0.65);
+
+    margin-bottom: 30px;
+}
+
+
+/* TAGS */
+
+.biology-copy .panel-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.biology-copy .panel-tags span {
+
+    border: 1px solid rgba(83, 107, 142, 0.5);
+
+    color: #dce5ef;
+
+    padding: 9px 12px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =================================
+   BIOLOGY VISUAL
+================================= */
+
+.biology-visual {
+
+    height: 520px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.dna-orbit {
+
+    width: 360px;
+
+    height: 360px;
+
+    border: 1px solid rgba(83, 107, 142, 0.35);
+
+    border-radius: 50%;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    animation: biologyOrbit 18s linear infinite;
+}
+
+
+.dna-orbit::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+
+    height: 260px;
+
+    border: 1px dashed rgba(121, 151, 113, 0.5);
+
+    border-radius: 50%;
+}
+
+
+.dna-orbit::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 440px;
+
+    height: 440px;
+
+    border: 1px solid rgba(243, 241, 234, 0.08);
+
+    border-radius: 50%;
+}
+
+
+/* DNA STRANDS */
+
+.dna-strand {
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 270px;
+
+    border-left: 2px solid #8da57f;
+
+    border-right: 2px solid #536B8E;
+
+    border-radius: 50%;
+
+}
+
+
+.strand-one {
+
+    transform: rotate(25deg);
+}
+
+
+.strand-two {
+
+    transform: rotate(-25deg);
+}
+
+
+/* CENTER */
+
+.dna-core {
+
+    width: 115px;
+
+    height: 115px;
+
+    border-radius: 50%;
+
+    background: #536B8E;
+
+    color: #f3f1ea;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 5;
+
+    box-shadow:
+        0 0 60px rgba(83, 107, 142, 0.25);
+}
+
+
+.dna-core span {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 18px;
+
+    letter-spacing: 0.08em;
+}
+
+
+.dna-core small {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 7px;
+
+    margin-top: 6px;
+
+    opacity: 0.7;
+}
+
+
+/* LABELS */
+
+.biology-label {
+
+    position: absolute;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.1em;
+
+    color: rgba(243, 241, 234, 0.55);
+}
+
+
+.label-one {
+
+    top: 70px;
+
+    right: 30px;
+}
+
+
+.label-two {
+
+    bottom: 95px;
+
+    left: 30px;
+}
+
+
+.label-three {
+
+    top: 230px;
+
+    right: -5px;
+}
+
+
+/* =================================
+   ANIMATION
+================================= */
+
+@keyframes biologyOrbit {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 800px) {
+
+    .biology-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        overflow-y: auto;
+
+        max-height: 90vh;
+
+        padding-top: 60px;
+
+    }
+
+
+    .biology-copy h3 {
+
+        font-size: 3.5rem;
+
+    }
+
+
+    .biology-visual {
+
+        height: 350px;
+
+    }
+
+
+    .dna-orbit {
+
+        width: 250px;
+
+        height: 250px;
+
+    }
+
+
+    .dna-orbit::after {
+
+        width: 310px;
+
+        height: 310px;
+
+    }
+
+
+    .dna-strand {
+
+        height: 190px;
+
+    }
+
+}
+
+/* =================================
+   RESEARCH — HYBRID EXPERIENCE
+================================= */
+
+.research-visual {
+
+    display: none;
+
+    height: 520px;
+
+    position: relative;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.research-orbit {
+
+    width: 400px;
+
+    height: 400px;
+
+    border: 1px solid rgba(137, 105, 174, 0.35);
+
+    border-radius: 50%;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    animation: researchRotate 20s linear infinite;
+}
+
+
+/* INNER ORBIT */
+
+.research-orbit::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 280px;
+
+    border: 1px dashed rgba(137, 105, 174, 0.45);
+
+    border-radius: 50%;
+}
+
+
+/* OUTER ORBIT */
+
+.research-orbit::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 470px;
+
+    height: 470px;
+
+    border: 1px solid rgba(243, 241, 234, 0.07);
+
+    border-radius: 50%;
+}
+
+
+/* CENTER */
+
+.research-center {
+
+    width: 125px;
+
+    height: 125px;
+
+    border-radius: 50%;
+
+    background: #76579A;
+
+    color: #f3f1ea;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 5;
+
+    box-shadow:
+        0 0 60px rgba(118, 87, 154, 0.28);
+}
+
+
+.research-center span {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 30px;
+
+    line-height: 1;
+}
+
+
+.research-center small {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 0.12em;
+
+    margin-top: 8px;
+
+    opacity: 0.7;
+}
+
+
+/* NODES */
+
+.research-node {
+
+    position: absolute;
+
+    width: 105px;
+
+    height: 105px;
+
+    border: 1px solid rgba(137, 105, 174, 0.55);
+
+    background: rgba(118, 87, 154, 0.08);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.08em;
+
+    color: rgba(243, 241, 234, 0.8);
+
+    z-index: 4;
+}
+
+
+.research-node span {
+
+    color: #a98bc8;
+
+    font-size: 12px;
+
+    margin-bottom: 6px;
+}
+
+
+/* NODE POSITIONS */
+
+.node-question {
+
+    top: 10px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+.node-explore {
+
+    bottom: 35px;
+
+    left: 25px;
+}
+
+
+.node-discover {
+
+    bottom: 35px;
+
+    right: 25px;
+}
+
+
+/* FLOATING NOTES */
+
+.research-note {
+
+    position: absolute;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.12em;
+
+    color: rgba(169, 139, 200, 0.7);
+
+    animation: researchFloat 4s ease-in-out infinite;
+}
+
+
+.note-one {
+
+    top: 80px;
+
+    right: 15px;
+}
+
+
+.note-two {
+
+    bottom: 110px;
+
+    left: 0;
+}
+
+
+.note-three {
+
+    top: 245px;
+
+    right: -15px;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes researchRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes researchFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .research-visual {
+
+        height: 350px;
+
+    }
+
+
+    .research-orbit {
+
+        width: 250px;
+
+        height: 250px;
+
+    }
+
+
+    .research-orbit::before {
+
+        width: 180px;
+
+        height: 180px;
+
+    }
+
+
+    .research-orbit::after {
+
+        width: 310px;
+
+        height: 310px;
+
+    }
+
+
+    .research-center {
+
+        width: 90px;
+
+        height: 90px;
+
+    }
+
+
+    .research-node {
+
+        animation: researchCounterRotate 20s linear infinite;
+
+        width: 75px;
+
+        height: 75px;
+
+        font-size: 6px;
+
+    }
+
+}
+/* =================================
+   RESEARCH LAYOUT
+================================= */
+
+.experience-panel.research-mode .biology-grid {
+    display: block;
+    width: min(1200px, 90vw);
+    position: relative;
+}
+
+
+/* Research should use the full screen */
+
+.experience-panel.research-mode .biology-copy {
+    max-width: 620px;
+    position: relative;
+    z-index: 5;
+}
+
+
+/* Research visual */
+
+.experience-panel.research-mode .research-visual {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52%;
+    height: 600px;
+}
+
+
+/* Purple typography */
+
+.experience-panel.research-mode .panel-number,
+.experience-panel.research-mode .panel-category {
+    color: #a98bc8;
+}
+
+
+.experience-panel.research-mode .panel-tags span {
+    border-color: rgba(169, 139, 200, 0.45);
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .experience-panel.research-mode .biology-grid {
+        width: 90vw;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .experience-panel.research-mode .research-visual {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        height: 350px;
+        margin-top: 20px;
+    }
+
+}
+@keyframes researchCounterRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+
+}
+/* =================================
+   TECHNOLOGY — HYBRID EXPERIENCE
+================================= */
+
+.technology-visual {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    height: 600px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =================================
+   TERMINAL
+================================= */
+
+.tech-terminal {
+    position: relative;
+    z-index: 5;
+
+    width: min(540px, 90%);
+
+    background: #101827;
+
+    border: 1px solid rgba(91, 133, 181, 0.45);
+
+    box-shadow:
+        0 0 70px rgba(53, 91, 135, 0.16);
+}
+
+
+/* HEADER */
+
+.terminal-header {
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0 15px;
+
+    border-bottom: 1px solid rgba(91, 133, 181, 0.2);
+}
+
+
+.terminal-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(170, 195, 220, 0.6);
+}
+
+
+.terminal-title {
+    margin-left: 10px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.08em;
+
+    color: rgba(220, 230, 240, 0.55);
+
+    white-space: nowrap;
+}
+
+
+/* BODY */
+
+.terminal-body {
+    padding: 32px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    color: #cbd8e6;
+}
+
+
+.terminal-line {
+    margin-bottom: 28px;
+
+    color: #dce7f2;
+}
+
+
+.prompt {
+    color: #7fa5cf;
+
+    margin-right: 8px;
+}
+
+
+.terminal-output {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    color: rgba(203, 216, 230, 0.55);
+}
+
+
+.terminal-output div {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-bottom: 1px solid rgba(91, 133, 181, 0.12);
+
+    padding-bottom: 10px;
+}
+
+
+.terminal-output strong {
+    color: #a9c5df;
+
+    font-weight: normal;
+}
+
+
+.processing {
+    animation: techPulse 1.8s ease-in-out infinite;
+}
+
+
+/* =================================
+   PROGRESS BAR
+================================= */
+
+.tech-progress {
+    height: 3px;
+
+    background: rgba(91, 133, 181, 0.15);
+
+    margin: 35px 0;
+
+    overflow: hidden;
+}
+
+
+.tech-progress span {
+    display: block;
+
+    width: 72%;
+
+    height: 100%;
+
+    background: #5b85b5;
+
+    animation: techProgress 3s ease-in-out infinite alternate;
+}
+
+
+/* =================================
+   RESULT
+================================= */
+
+.terminal-result {
+    border-left: 2px solid #5b85b5;
+
+    padding-left: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.terminal-result small {
+    font-size: 8px;
+
+    color: rgba(203, 216, 230, 0.45);
+
+    letter-spacing: 0.12em;
+}
+
+
+.terminal-result strong {
+    font-size: 11px;
+
+    color: #dce7f2;
+
+    font-weight: normal;
+}
+
+
+/* =================================
+   FLOATING LABELS
+================================= */
+
+.tech-label {
+    position: absolute;
+
+    z-index: 2;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.12em;
+
+    color: rgba(127, 165, 207, 0.65);
+
+    pointer-events: none;
+}
+
+
+.tech-label-one {
+    top: 80px;
+    right: 5px;
+}
+
+
+.tech-label-two {
+    bottom: 95px;
+    left: 0;
+}
+
+
+.tech-label-three {
+    top: 250px;
+    right: -25px;
+}
+
+
+/* =================================
+   TECHNOLOGY MODE
+================================= */
+
+.experience-panel.technology-mode .biology-grid {
+    display: block;
+
+    width: min(1200px, 90vw);
+
+    position: relative;
+}
+
+
+.experience-panel.technology-mode .biology-copy {
+    max-width: 580px;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+.experience-panel.technology-mode .panel-number,
+.experience-panel.technology-mode .panel-category {
+    color: #7fa5cf;
+}
+
+
+.experience-panel.technology-mode .panel-tags span {
+    border-color: rgba(91, 133, 181, 0.45);
+}
+
+
+.experience-panel.technology-mode .technology-visual {
+    display: flex;
+}
+
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes techPulse {
+    0%,
+    100% {
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes techProgress {
+    from {
+        width: 40%;
+    }
+
+    to {
+        width: 88%;
+    }
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 800px) {
+
+    .experience-panel.technology-mode .biology-grid {
+        width: 90vw;
+
+        max-height: 90vh;
+
+        overflow-y: auto;
+    }
+
+
+    .experience-panel.technology-mode .technology-visual {
+        position: relative;
+
+        right: auto;
+        top: auto;
+
+        transform: none;
+
+        width: 100%;
+
+        height: 350px;
+
+        margin-top: 20px;
+    }
+
+
+    .tech-terminal {
+        width: 95%;
+    }
+
+
+    .terminal-body {
+        padding: 22px;
+
+        font-size: 9px;
+    }
+
+
+    .terminal-title {
+        font-size: 7px;
+    }
+
+
+    .tech-label-three {
+        right: 0;
+    }
+
+}
+/* =================================
+   MUSIC — HYBRID EXPERIENCE
+================================= */
+
+.music-visual {
+
+    display: none;
+
+    position: absolute;
+
+    right: 0;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 50%;
+
+    height: 600px;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+/* RECORD */
+
+.music-record {
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            #241719 0px,
+            #241719 3px,
+            #301d20 4px,
+            #241719 7px
+        );
+
+    border: 1px solid rgba(167, 91, 103, 0.45);
+
+    position: relative;
+
+    animation: recordSpin 16s linear infinite;
+
+    box-shadow:
+        0 0 90px rgba(139, 67, 79, 0.16);
+
+}
+
+
+/* RECORD CENTER */
+
+.record-center {
+
+    width: 90px;
+
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: #a45f6d;
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #f5eee8;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 14px;
+
+    z-index: 5;
+
+}
+
+
+/* CENTER DOT */
+
+.record-center::after {
+
+    content: "";
+
+    width: 7px;
+
+    height: 7px;
+
+    background: #241719;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+}
+
+
+/* WAVE */
+
+.music-wave {
+
+    position: absolute;
+
+    bottom: 105px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    z-index: 8;
+
+}
+
+
+.music-wave span {
+
+    width: 3px;
+
+    height: 25px;
+
+    background: #a45f6d;
+
+    animation: musicWave 1.2s ease-in-out infinite alternate;
+
+}
+
+
+.music-wave span:nth-child(2) {
+    animation-delay: .1s;
+}
+
+.music-wave span:nth-child(3) {
+    animation-delay: .2s;
+}
+
+.music-wave span:nth-child(4) {
+    animation-delay: .3s;
+}
+
+.music-wave span:nth-child(5) {
+    animation-delay: .4s;
+}
+
+.music-wave span:nth-child(6) {
+    animation-delay: .5s;
+}
+
+.music-wave span:nth-child(7) {
+    animation-delay: .6s;
+}
+
+.music-wave span:nth-child(8) {
+    animation-delay: .7s;
+}
+
+.music-wave span:nth-child(9) {
+    animation-delay: .8s;
+}
+
+.music-wave span:nth-child(10) {
+    animation-delay: .9s;
+}
+
+.music-wave span:nth-child(11) {
+    animation-delay: 1s;
+}
+
+
+/* LABELS */
+
+.music-label {
+
+    position: absolute;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .12em;
+
+    color: rgba(196, 135, 146, .65);
+
+}
+
+
+.music-label-one {
+
+    top: 100px;
+
+    right: 10px;
+
+}
+
+
+.music-label-two {
+
+    bottom: 85px;
+
+    left: 5px;
+
+}
+
+
+.music-label-three {
+
+    top: 250px;
+
+    right: -25px;
+
+}
+
+
+/* MUSIC MODE */
+
+.experience-panel.music-mode .biology-grid {
+
+    display: block;
+
+    width: min(1200px, 90vw);
+
+    position: relative;
+
+}
+
+
+.experience-panel.music-mode .biology-copy {
+
+    max-width: 600px;
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+
+.experience-panel.music-mode .panel-number,
+.experience-panel.music-mode .panel-category {
+
+    color: #a45f6d;
+
+}
+
+
+.experience-panel.music-mode .panel-tags span {
+
+    border-color: rgba(164, 95, 109, .45);
+
+}
+
+
+.experience-panel.music-mode .music-visual {
+
+    display: flex;
+
+}
+
+
+/* ANIMATION */
+
+@keyframes recordSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes musicWave {
+
+    from {
+        height: 12px;
+    }
+
+    to {
+        height: 48px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .experience-panel.music-mode .biology-grid {
+
+        width: 90vw;
+
+        max-height: 90vh;
+
+        overflow-y: auto;
+
+    }
+
+
+    .experience-panel.music-mode .music-visual {
+
+        position: relative;
+
+        right: auto;
+
+        top: auto;
+
+        transform: none;
+
+        width: 100%;
+
+        height: 350px;
+
+        margin-top: 20px;
+
+    }
+
+
+    .music-record {
+
+        width: 240px;
+
+        height: 240px;
+
+    }
+
+   
+
+}
+/* =================================
+   NOTEBOOK — HYBRID EXPERIENCE
+================================= */
+
+.notebook-visual {
+
+    display: none;
+
+    position: absolute;
+
+    right: 0;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 50%;
+
+    height: 600px;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.notebook-page {
+
+    width: 500px;
+
+    min-height: 390px;
+
+    background: #e9dfcf;
+
+    color: #29251f;
+
+    padding: 32px;
+
+    position: relative;
+
+    box-shadow:
+        18px 18px 0 rgba(145, 120, 92, .18);
+
+    transform: rotate(-2deg);
+
+}
+
+
+/* TOP */
+
+.page-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .1em;
+
+    opacity: .55;
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid rgba(41, 37, 31, .2);
+
+}
+
+
+.page-line {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    letter-spacing: .1em;
+
+    margin: 30px 0;
+
+}
+
+
+/* BOOK */
+
+.book-entry {
+
+    display: flex;
+
+    gap: 18px;
+
+    align-items: flex-start;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid rgba(41, 37, 31, .14);
+
+}
+
+
+.book-number {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    opacity: .45;
+
+}
+
+
+.book-entry strong {
+
+    display: block;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    font-weight: normal;
+
+    line-height: 1.2;
+
+}
+
+
+.book-entry small {
+
+    display: block;
+
+    margin-top: 6px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    opacity: .55;
+
+}
+
+
+/* NOTE */
+
+.page-note {
+
+    margin-top: 30px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .08em;
+
+    opacity: .55;
+
+}
+
+
+/* STAMP */
+
+.notebook-stamp {
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 70px;
+
+    border: 1px solid rgba(135, 91, 67, .55);
+
+    color: rgba(135, 91, 67, .7);
+
+    padding: 12px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .1em;
+
+    text-align: center;
+
+    transform: rotate(8deg);
+
+}
+
+
+/* NOTEBOOK MODE */
+
+.experience-panel.notebook-mode .biology-grid {
+
+    display: block;
+
+    width: min(1200px, 90vw);
+
+    position: relative;
+
+}
+
+
+.experience-panel.notebook-mode .biology-copy {
+
+    max-width: 600px;
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+
+.experience-panel.notebook-mode .panel-number,
+.experience-panel.notebook-mode .panel-category {
+
+    color: #a37c5b;
+
+}
+
+
+.experience-panel.notebook-mode .panel-tags span {
+
+    border-color: rgba(163, 124, 91, .45);
+
+}
+
+
+.experience-panel.notebook-mode .notebook-visual {
+
+    display: flex;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .experience-panel.notebook-mode .biology-grid {
+
+        width: 90vw;
+
+        max-height: 90vh;
+
+        overflow-y: auto;
+
+    }
+
+
+    .experience-panel.notebook-mode .notebook-visual {
+
+        position: relative;
+
+        right: auto;
+
+        top: auto;
+
+        transform: none;
+
+        width: 100%;
+
+        height: 400px;
+
+        margin-top: 20px;
+
+    }
+
+
+    .notebook-page {
+
+        width: 90%;
+
+        min-height: 350px;
+
+        padding: 22px;
+
+    }
+
+
+    .book-entry strong {
+
+        font-size: 16px;
+
+    }
+
+}
+/* =================================
+   FUEL — COFFEE EXPERIENCE
+================================= */
+
+.fuel-visual {
+
+    display: none;
+
+    position: absolute;
+
+    right: 0;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 50%;
+
+    height: 600px;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* CUP */
+
+.coffee-cup {
+
+    width: 230px;
+
+    height: 160px;
+
+    background: #d8c1a5;
+
+    border-radius:
+        15px 15px 70px 70px;
+
+    position: relative;
+
+    z-index: 5;
+
+    box-shadow:
+        0 30px 60px rgba(75, 48, 29, .2);
+
+}
+
+
+/* COFFEE */
+
+.coffee-liquid {
+
+    position: absolute;
+
+    top: 15px;
+
+    left: 15px;
+
+    right: 15px;
+
+    height: 65px;
+
+    background: #5a3928;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+}
+
+
+.coffee-swirl {
+
+    width: 70px;
+
+    height: 25px;
+
+    border: 1px solid rgba(220, 190, 155, .3);
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+}
+
+
+/* HANDLE */
+
+.cup-handle {
+
+    position: absolute;
+
+    width: 75px;
+
+    height: 75px;
+
+    border: 18px solid #d8c1a5;
+
+    border-left: none;
+
+    border-radius: 0 50% 50% 0;
+
+    right: -62px;
+
+    top: 40px;
+
+}
+
+
+/* STEAM */
+
+.coffee-steam {
+
+    position: absolute;
+
+    width: 2px;
+
+    height: 70px;
+
+    background: rgba(216, 193, 165, .35);
+
+    border-radius: 50%;
+
+    filter: blur(1px);
+
+    animation: steamFloat 3s ease-in-out infinite;
+
+}
+
+
+.steam-one {
+
+    margin-left: -55px;
+
+    margin-top: -180px;
+
+}
+
+
+.steam-two {
+
+    margin-left: 0;
+
+    margin-top: -205px;
+
+    animation-delay: .8s;
+
+}
+
+
+.steam-three {
+
+    margin-left: 55px;
+
+    margin-top: -175px;
+
+    animation-delay: 1.5s;
+
+}
+
+
+/* LABELS */
+
+.fuel-label {
+
+    position: absolute;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .12em;
+
+    color: rgba(216, 193, 165, .55);
+
+}
+
+
+.fuel-label-one {
+
+    top: 110px;
+
+    right: 15px;
+
+}
+
+
+.fuel-label-two {
+
+    bottom: 90px;
+
+    left: 5px;
+
+}
+
+
+.fuel-label-three {
+
+    top: 255px;
+
+    right: -20px;
+
+}
+
+
+/* MODE */
+
+.experience-panel.fuel-mode .biology-grid {
+
+    display: block;
+
+    width: min(1200px, 90vw);
+
+    position: relative;
+
+}
+
+
+.experience-panel.fuel-mode .biology-copy {
+
+    max-width: 600px;
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+
+.experience-panel.fuel-mode .panel-number,
+.experience-panel.fuel-mode .panel-category {
+
+    color: #c19a70;
+
+}
+
+
+.experience-panel.fuel-mode .panel-tags span {
+
+    border-color: rgba(193, 154, 112, .45);
+
+}
+
+
+.experience-panel.fuel-mode .fuel-visual {
+
+    display: flex;
+
+}
+
+
+/* ANIMATION */
+
+@keyframes steamFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            scaleX(1);
+
+        opacity: .2;
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-20px)
+            scaleX(1.5);
+
+        opacity: .55;
+
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .experience-panel.fuel-mode .biology-grid {
+
+        width: 90vw;
+
+        max-height: 90vh;
+
+        overflow-y: auto;
+
+    }
+
+
+    .experience-panel.fuel-mode .fuel-visual {
+
+        position: relative;
+
+        right: auto;
+
+        top: auto;
+
+        transform: none;
+
+        width: 100%;
+
+        height: 350px;
+
+        margin-top: 20px;
+
+    }
+
+
+    .coffee-cup {
+
+        transform: scale(.8);
+
+    }
+
+}
+/* =================================
+   MUSIC LIBRARY
+================================= */
+
+.music-library {
+
+    width: min(440px, 42vw);
+
+    margin-left: auto;
+
+    margin-right: 4vw;
+
+    margin-top: 100px;
+
+}
+
+
+.music-library-title {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: .16em;
+
+    color: rgba(196, 135, 146, .65);
+
+    margin-bottom: 12px;
+
+}
+
+
+.song-item {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 35px 1fr 30px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px 0;
+
+    background: transparent;
+
+    border: none;
+
+    border-top: 1px solid rgba(164, 95, 109, 0.25);
+
+    color: #f5eee8;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        padding 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+.song-item:last-child {
+
+    border-bottom:
+        1px solid rgba(164, 95, 109, 0.25);
+
+}
+
+
+.song-number {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: rgba(196, 135, 146, 0.55);
+
+}
+
+
+.song-info strong {
+
+    display: block;
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    letter-spacing: -0.02em;
+
+}
+
+
+.song-info small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.12em;
+
+    color: rgba(245, 238, 232, 0.4);
+
+}
+
+
+.song-play {
+
+    font-size: 11px;
+
+    color: #b36a78;
+
+    text-align: right;
+
+}
+
+
+.song-item:hover {
+
+    padding-left: 10px;
+
+    color: #c98b98;
+
+}
+
+
+.song-item.playing {
+
+    color: #c98b98;
+
+}
+
+.song-item:last-child {
+
+    border-bottom:
+        1px solid rgba(164, 95, 109, .25);
+
+}
+
+
+.song-number {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    color: rgba(196, 135, 146, .55);
+
+}
+
+
+.song-info {
+
+    flex: 1;
+
+}
+
+
+.song-info strong {
+
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+}
+
+
+.song-info small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .08em;
+
+    color: rgba(245, 238, 232, .45);
+
+}
+
+
+.song-play {
+
+    font-size: 10px;
+
+    color: #a45f6d;
+
+}
+
+
+.song-item:hover {
+
+    padding-left: 8px;
+
+    transition: .25s ease;
+
+}
+
+
+.song-item.playing {
+
+    color: #c98b98;
+
+}
+
+
+#musicPlayer {
+
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    width: 1px;
+
+    height: 1px;
+
+}
+/* SOCIAL MEDIA */
+
+.social-links {
+    position: fixed;
+    left: 42px;
+    bottom: 32px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.social-links a {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #f5eee8;
+    text-decoration: none;
+
+    opacity: 0.75;
+
+    transition: all 0.25s ease;
+}
+
+.social-links a:hover {
+    color: #b36a78;
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.social-links svg {
+    width: 20px;
+    height: 20px;
+
+    display: block;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+/* HOMEPAGE SOCIAL LINKS */
+
+.home-socials {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 22px;
+}
+
+.home-socials a {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #111;
+    opacity: 0.65;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.home-socials svg {
+    width: 18px;
+    height: 18px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.home-socials a:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+    color: #58749b;
+}
