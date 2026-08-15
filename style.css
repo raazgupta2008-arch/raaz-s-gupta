@@ -3259,19 +3259,7 @@ box-shadow:
 }
 
 
-#musicPlayer {
 
-    position: absolute;
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    width: 1px;
-
-    height: 1px;
-
-}
 /* SOCIAL MEDIA */
 
 .social-links {
@@ -3547,4 +3535,22 @@ box-shadow:
         display: none;
     }
 
+}
+/* =================================
+   MUSIC PLAYER
+================================= */
+
+#musicPlayer {
+    display: block;
+
+    width: 100%;
+    max-width: 420px;
+
+    height: 40px;
+
+    margin-top: 25px;
+
+    opacity: 1;
+
+    pointer-events: auto;
 }
