@@ -3554,3 +3554,142 @@ box-shadow:
 
     pointer-events: auto;
 }
+/* =================================
+   FINAL MUSIC PLAYER
+================================= */
+
+.music-upload {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 15px 0 20px;
+
+    padding: 10px 14px;
+
+    border: 1px solid rgba(243, 241, 234, 0.3);
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.1em;
+
+    color: #f3f1ea;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.music-upload:hover {
+    border-color: #a45f6d;
+
+    color: #c98b98;
+
+    transform: translateY(-2px);
+}
+
+
+#songList {
+    width: 100%;
+}
+
+
+.song-item {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
+    background: transparent;
+
+    border: none;
+
+    border-bottom: 1px solid rgba(243, 241, 234, 0.12);
+
+    color: #f3f1ea;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+
+.song-item:hover {
+    padding-left: 8px;
+}
+
+
+.song-number {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    opacity: 0.4;
+
+    min-width: 20px;
+}
+
+
+.song-info {
+    flex: 1;
+}
+
+
+.song-info strong {
+    display: block;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    font-weight: 400;
+}
+
+
+.song-info small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 7px;
+
+    letter-spacing: 0.08em;
+
+    opacity: 0.45;
+}
+
+
+.song-play {
+    font-size: 10px;
+
+    color: #a45f6d;
+}
+
+
+.song-item.playing {
+    color: #c98b98;
+}
+
+
+#musicPlayer {
+    display: block;
+
+    width: 100%;
+
+    max-width: 420px;
+
+    height: 40px;
+
+    margin-top: 25px;
+
+    pointer-events: auto;
+}

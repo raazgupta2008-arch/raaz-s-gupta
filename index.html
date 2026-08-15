@@ -563,66 +563,34 @@
     </div>
 
 </div>
-<!-- MUSIC VISUAL -->
+<!-- =================================
+     MUSIC VISUAL
+================================= -->
 
 <div class="music-visual">
 
-   
- <div class="music-library">
+    <div class="music-library">
 
         <div class="music-library-title">
             MY MUSIC
         </div>
 
+        <label class="music-upload">
+            <span>+ ADD SONGS</span>
+            <input
+                type="file"
+                id="songUpload"
+                accept="audio/*"
+                multiple
+                hidden
+            >
+        </label>
 
-        <button class="song-item" data-file="./songs/udi-udi.mp3">
-
-            <span class="song-number">
-                01
-            </span>
-
-            <span class="song-info">
-
-                <strong>Udi Udi</strong>
-
-                <small>
-                    LIVE / MASHUP
-                </small>
-
-            </span>
-
-            <span class="song-play">
-                ▶
-            </span>
-
-        </button>
-
-
-        <button class="song-item" data-file="./songs/bairan.mp3">
-
-            <span class="song-number">
-                02
-            </span>
-
-            <span class="song-info">
-
-                <strong>Bairan</strong>
-
-                <small>
-                    LIVE / MASHUP
-                </small>
-
-            </span>
-
-            <span class="song-play">
-                ▶
-            </span>
-
-        </button>
+        <div id="songList"></div>
 
     </div>
 
-    <songs id="musicPlayer" controls></songs>
+    <audio id="musicPlayer" controls preload="metadata"></audio>
 
 </div>
 <!-- NOTEBOOK VISUAL -->
