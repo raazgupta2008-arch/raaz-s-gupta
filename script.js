@@ -335,38 +335,47 @@ const songItems = document.querySelectorAll(".song-item");
 console.log("Music player:", musicPlayer);
 console.log("Songs found:", songItems.length);
 
-
 songItems.forEach(function(song) {
 
     song.addEventListener("click", function() {
 
-        const file = song.getAttribute("data-file");
+        const file = song.dataset.file;
 
-        console.log("Trying to play:", file);
-
-        if (!file) {
-            console.error("No data-file found for this song.");
-            return;
-        }
+        console.log("Song clicked:", song);
+        console.log("Trying to load:", file);
 
         if (!musicPlayer) {
-            console.error("Music player not found.");
+            console.error("ERROR: musicPlayer was not found.");
             return;
         }
 
+        if (!file) {
+            console.error("ERROR: No data-file on this song.");
+            return;
+        }
+
+        // Remove playing state from all songs
+        songItems.forEach(function(item) {
+            item.classList.remove("playing");
+        });
+
+        // Set selected song
         musicPlayer.src = file;
 
         musicPlayer.load();
 
+        // Try to play
         musicPlayer.play()
             .then(function() {
 
-                console.log("Playing:", file);
+                console.log("SUCCESS: Playing", file);
+
+                song.classList.add("playing");
 
             })
             .catch(function(error) {
 
-                console.error("Playback error:", error);
+                console.error("ERROR PLAYING SONG:", error);
 
             });
 
@@ -376,7 +385,7 @@ songItems.forEach(function(song) {
 
 
 /* =================================
-   WHEN SONG FINISHES
+   SONG ENDED
 ================================= */
 
 if (musicPlayer) {
@@ -384,9 +393,7 @@ if (musicPlayer) {
     musicPlayer.addEventListener("ended", function() {
 
         songItems.forEach(function(song) {
-
             song.classList.remove("playing");
-
         });
 
     });
