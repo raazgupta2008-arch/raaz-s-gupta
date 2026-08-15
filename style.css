@@ -18,7 +18,7 @@ html {
 
 
 body {
-    background: #deba37;
+    background: #fbcf2f;
     color: #171717;
 
     font-family: "Manrope", sans-serif;
@@ -730,7 +730,7 @@ box-shadow:
 
     background: #171717;
 
-    color: #f3f1ea;
+    color: #fbcf2f;
 
     z-index: 999;
 
@@ -777,7 +777,7 @@ box-shadow:
 
     border: none;
 
-    color: #f3f1ea;
+    color: #fbcf2f;
 
     font-family: "DM Mono", monospace;
 
@@ -1134,7 +1134,7 @@ box-shadow:
 
     background: #536B8E;
 
-    color: #f3f1ea;
+    color: #fbcf2f;
 
     display: flex;
 
@@ -1385,7 +1385,7 @@ box-shadow:
 
     background: #76579A;
 
-    color: #f3f1ea;
+    color: #fbcf2f;
 
     display: flex;
 
@@ -3575,7 +3575,7 @@ box-shadow:
 
     letter-spacing: 0.1em;
 
-    color: #f3f1ea;
+    color: #fbcf2f;
 
     cursor: pointer;
 
@@ -3613,7 +3613,7 @@ box-shadow:
 
     border-bottom: 1px solid rgba(243, 241, 234, 0.12);
 
-    color: #f3f1ea;
+    color: #fbcf2f;
 
     text-align: left;
 
@@ -3697,7 +3697,7 @@ box-shadow:
     position: fixed;
     inset: 0;
     background: #171717;
-    color: #f3f1ea;
+    color: #fbcf2f;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -3709,7 +3709,7 @@ box-shadow:
 }
 .nav-menu.open { transform: translateX(0); }
 .nav-menu-link {
-    color: #f3f1ea;
+    color: #fbcf2f;
     text-decoration: none;
     font-family: "DM Mono", monospace;
     font-size: clamp(1.5rem, 4vw, 3rem);
@@ -3722,5 +3722,5 @@ box-shadow:
     position: absolute;
     top: 30px; right: 30px;
     background: none; border: none;
-    color: #f3f1ea; font-size: 20px; cursor: pointer;
+    color: #fbcf2f; font-size: 20px; cursor: pointer;
 }
