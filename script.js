@@ -329,110 +329,66 @@ closePanel.addEventListener("click", function() {
    RAAZ MUSIC PLAYER
 ================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+const musicPlayer = document.getElementById("musicPlayer");
+const songItems = document.querySelectorAll(".song-item");
 
-    const musicPlayer = document.getElementById("musicPlayer");
-    const songs = document.querySelectorAll(".song-item");
-
-    if (!musicPlayer) {
-        console.error("Music player not found.");
-        return;
-    }
-
-    songs.forEach(song => {
-
-        song.addEventListener("click", () => {
-
-            const file = song.getAttribute("data-file");
-
-            if (!file) {
-                console.error("No music file found.");
-                return;
-            }
-
-            /* If this song is already playing, pause it */
-            if (
-                musicPlayer.src.endsWith(file) &&
-                !musicPlayer.paused
-            ) {
-
-                musicPlayer.pause();
-
-                const icon = song.querySelector(".song-play");
-
-                if (icon) {
-                    icon.textContent = "▶";
-                }
-
-                song.classList.remove("playing");
-
-                return;
-            }
-
-            /* Load the selected song */
-            musicPlayer.src = file;
-            musicPlayer.load();
-
-            /* Play after the user's tap */
-            musicPlayer.play()
-                .then(() => {
-
-                    /* Reset all other songs */
-                    songs.forEach(item => {
-
-                        item.classList.remove("playing");
-
-                        const icon =
-                            item.querySelector(".song-play");
-
-                        if (icon) {
-                            icon.textContent = "▶";
-                        }
-
-                    });
-
-                    /* Mark current song as playing */
-                    song.classList.add("playing");
-
-                    const icon =
-                        song.querySelector(".song-play");
-
-                    if (icon) {
-                        icon.textContent = "Ⅱ";
-                    }
-
-                })
-                .catch(error => {
-
-                    console.error(
-                        "Could not play song:",
-                        error
-                    );
-
-                });
-
-        });
-
-    });
+console.log("Music player:", musicPlayer);
+console.log("Songs found:", songItems.length);
 
 
-    /* Reset button when song finishes */
+songItems.forEach(function(song) {
 
-    musicPlayer.addEventListener("ended", () => {
+    song.addEventListener("click", function() {
 
-        songs.forEach(song => {
+        const file = song.getAttribute("data-file");
 
-            song.classList.remove("playing");
+        console.log("Trying to play:", file);
 
-            const icon =
-                song.querySelector(".song-play");
+        if (!file) {
+            console.error("No data-file found for this song.");
+            return;
+        }
 
-            if (icon) {
-                icon.textContent = "▶";
-            }
+        if (!musicPlayer) {
+            console.error("Music player not found.");
+            return;
+        }
 
-        });
+        musicPlayer.src = file;
+
+        musicPlayer.load();
+
+        musicPlayer.play()
+            .then(function() {
+
+                console.log("Playing:", file);
+
+            })
+            .catch(function(error) {
+
+                console.error("Playback error:", error);
+
+            });
 
     });
 
 });
+
+
+/* =================================
+   WHEN SONG FINISHES
+================================= */
+
+if (musicPlayer) {
+
+    musicPlayer.addEventListener("ended", function() {
+
+        songItems.forEach(function(song) {
+
+            song.classList.remove("playing");
+
+        });
+
+    });
+
+}
