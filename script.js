@@ -229,10 +229,36 @@ if (world === "research") {
 ================================= */
 
 if (world === "technology") {
+function typeSequence() {
+    const seqEl = document.getElementById("seqValue");
+    const statusEl = document.getElementById("seqStatus");
+    const bar = document.querySelector(".tech-progress span");
+    const full = "ATCGGCTAGCTTAGCCGA...";
 
+    seqEl.textContent = "";
+    statusEl.textContent = "PROCESSING";
+    statusEl.classList.add("processing");
+    bar.style.animation = "none";
+    bar.style.width = "0%";
+
+    let i = 0;
+    const interval = setInterval(() => {
+        seqEl.textContent = full.slice(0, i) + "█";
+        i++;
+        if (i > full.length) {
+            clearInterval(interval);
+            seqEl.textContent = full;
+            statusEl.textContent = "COMPLETE";
+            statusEl.classList.remove("processing");
+            bar.style.width = "100%";
+        }
+    }, 55);
+}
     technologyVisual.style.display = "flex";
 
     experiencePanel.classList.add("technology-mode");
+
+    typeSequence();
 
 }
 
@@ -326,76 +352,193 @@ closePanel.addEventListener("click", function() {
 
 });
 /* =================================
-   RAAZ MUSIC PLAYER
+   RAAZ MUSIC PLAYER — FINAL
 ================================= */
 
 const musicPlayer = document.getElementById("musicPlayer");
-const songItems = document.querySelectorAll(".song-item");
+const songUpload = document.getElementById("songUpload");
+const songList = document.getElementById("songList");
 
-console.log("Music player:", musicPlayer);
-console.log("Songs found:", songItems.length);
+let songs = [];
+let currentSong = null;
 
-songItems.forEach(function(song) {
 
-    song.addEventListener("click", function() {
+/* ---------------------------------
+   CHECK PLAYER
+--------------------------------- */
 
-        const file = song.dataset.file;
+console.log("Music system loaded");
 
-        console.log("Song clicked:", song);
-        console.log("Trying to load:", file);
+if (!musicPlayer) {
+    console.error("Music player not found.");
+}
 
-        if (!musicPlayer) {
-            console.error("ERROR: musicPlayer was not found.");
+if (!songUpload) {
+    console.error("Song upload button not found.");
+}
+
+if (!songList) {
+    console.error("Song list not found.");
+}
+
+
+/* ---------------------------------
+   ADD SONGS
+--------------------------------- */
+
+songUpload.addEventListener("change", function(event) {
+
+    const files = Array.from(event.target.files);
+
+    files.forEach(function(file) {
+
+        if (!file.type.startsWith("audio/")) {
             return;
         }
 
-        if (!file) {
-            console.error("ERROR: No data-file on this song.");
-            return;
-        }
-
-        // Remove playing state from all songs
-        songItems.forEach(function(item) {
-            item.classList.remove("playing");
-        });
-
-        // Set selected song
-        musicPlayer.src = file;
-
-        musicPlayer.load();
-
-        // Try to play
-        musicPlayer.play()
-            .then(function() {
-
-                console.log("SUCCESS: Playing", file);
-
-                song.classList.add("playing");
-
-            })
-            .catch(function(error) {
-
-                console.error("ERROR PLAYING SONG:", error);
-
-            });
+        songs.push(file);
 
     });
+
+    renderSongs();
+
+    // Reset input so the same file can be selected again
+    songUpload.value = "";
 
 });
 
 
-/* =================================
-   SONG ENDED
-================================= */
+/* ---------------------------------
+   DISPLAY SONGS
+--------------------------------- */
 
-if (musicPlayer) {
+function renderSongs() {
 
-    musicPlayer.addEventListener("ended", function() {
+    songList.innerHTML = "";
 
-        songItems.forEach(function(song) {
-            song.classList.remove("playing");
+    songs.forEach(function(file, index) {
+
+        const button = document.createElement("button");
+
+        button.className = "song-item";
+
+        button.type = "button";
+
+        button.innerHTML = `
+            <span class="song-number">
+                ${String(index + 1).padStart(2, "0")}
+            </span>
+
+            <span class="song-info">
+                <strong>${file.name}</strong>
+
+                <small>
+                    AUDIO FILE
+                </small>
+            </span>
+
+            <span class="song-play">
+                ▶
+            </span>
+        `;
+
+
+        /* ---------------------------------
+           PLAY SONG
+        --------------------------------- */
+
+        button.addEventListener("click", function() {
+
+            playSong(file, button);
+
         });
+
+
+        songList.appendChild(button);
 
     });
 
 }
+
+
+/* ---------------------------------
+   PLAY SONG
+--------------------------------- */
+
+function playSong(file, button) {
+
+    console.log("Playing:", file.name);
+
+    // Remove playing state
+    document.querySelectorAll(".song-item").forEach(function(item) {
+
+        item.classList.remove("playing");
+
+    });
+
+
+    // Create browser URL for the file
+    const audioURL = URL.createObjectURL(file);
+
+    // Give audio element the file
+    musicPlayer.src = audioURL;
+
+    currentSong = file;
+
+    // Load it
+    musicPlayer.load();
+
+
+    // Play it
+    musicPlayer.play()
+        .then(function() {
+
+            console.log("SUCCESS:", file.name);
+
+            button.classList.add("playing");
+
+        })
+        .catch(function(error) {
+
+            console.error("PLAYBACK ERROR:", error);
+
+        });
+
+}
+
+
+/* ---------------------------------
+   SONG ENDED
+--------------------------------- */
+
+musicPlayer.addEventListener("ended", function() {
+
+    document.querySelectorAll(".song-item").forEach(function(item) {
+
+        item.classList.remove("playing");
+
+    });
+
+});
+const menuButton = document.querySelector(".menu-button");
+const navMenu = document.getElementById("navMenu");
+const navMenuClose = document.getElementById("navMenuClose");
+
+menuButton.addEventListener("click", () => navMenu.classList.add("open"));
+navMenuClose.addEventListener("click", () => navMenu.classList.remove("open"));
+document.querySelectorAll(".nav-menu-link").forEach(link => {
+    link.addEventListener("click", () => navMenu.classList.remove("open"));
+});
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && experiencePanel.classList.contains("active")) {
+        experiencePanel.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+});
+
+experiencePanel.addEventListener("click", (e) => {
+    if (e.target === experiencePanel) {
+        experiencePanel.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+});
